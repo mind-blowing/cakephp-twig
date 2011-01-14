@@ -1,7 +1,11 @@
 <?php
+App::import('vendor', 'Autoloader',
+            array('file' => 'Twig' . DS . 'lib'. DS . 'Twig' . DS . 'Autoloader.php'));
 
-App::import('vendor', 'cakephp-twig.Autoloader',
-		array('file' => 'Twig' . DS . 'lib'. DS . 'Twig' . DS . 'Autoloader.php'));
+if(!class_exists('Twig_Autoloader', false)) {
+    App::import('vendor', 'cakephp-twig.Autoloader',
+            array('file' => 'Twig' . DS . 'lib'. DS . 'Twig' . DS . 'Autoloader.php'));
+}
 
 // Twig_Autoloader must be registered before loading your extensions
 Twig_Autoloader::register();
