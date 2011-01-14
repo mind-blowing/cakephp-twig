@@ -13,7 +13,11 @@ Twig_Autoloader::register();
 // Include user's Twig extensions
 App::import('lib', 'cakephp-twig.Text');
 App::import('lib', 'cakephp-twig.Debug');
-App::import('lib', 'cakephp-twig.SpecificToProject');
+
+App::import('lib', 'TwigExtensionSpecificToProject');
+if(!class_exists('Twig_Extension_SpecificToProject', false)) {
+    App::import('lib', 'cakephp-twig.TwigExtensionSpecificToProject');
+}
 
 class TwigView extends View
 {
