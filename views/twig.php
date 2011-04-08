@@ -32,7 +32,7 @@ class TwigView extends View
     {
         parent::__construct($controller);
 
-        $cacheDir = realpath(dirname(__FILE__) . '/../') . DS . 'tmp';
+        $cacheDir = TMP . DS . 'cache' . DS . 'views';
         $debugMode = (bool)Configure::read('debug');
 
         $loader = new Twig_Loader_String();
