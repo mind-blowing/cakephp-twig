@@ -43,7 +43,7 @@ class TwigView extends View
             'debug' => $debugMode
         ));
 
-        $this->ext = '.htm';
+        $this->ext = '.twig';
 
         // Load user's Twig extensions
         $this->twig->addExtension(new Twig_Extensions_Extension_Text());
